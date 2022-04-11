@@ -61,6 +61,7 @@ files. If you just want to run the Bullet+BG evolution without the background ev
 
 `./run-projection.sh [EVOPATHs.txt] [OUTPUTNAME.root].
 `
+
 If you want to add the background contribution, you must also create a text file with the background evolution files and run
 
 `./run-projection.sh [EVOPATHs.txt] [BGPATHs.txt] [OUTPUTNAME.root].
