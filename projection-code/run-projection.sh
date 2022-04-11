@@ -11,8 +11,8 @@
 #Checking number of arguments
 if [[ ($# -lt  2) || ($# -gt 3) ]]; then
     echo "Invalid number of arguments." 
-    echo "Correct call with evolution and background files: ./run-projection.sh [EVOPATH.root] [BGPATH.root] [OUTPUTNAME.root]"
-    echo "Correct call with evolution but without background files: ./run-projection.sh [EVOPATH.root] [OUTPUTNAME.root]"
+    echo "Correct call with evolution and background files: ./run-projection.sh [EVOPATHs.txt] [BGPATHs.txt] [OUTPUTNAME.root]"
+    echo "Correct call with evolution but without background files: ./run-projection.sh [EVOPATHs.txt] [OUTPUTNAME.root]"
     exit
 fi
  

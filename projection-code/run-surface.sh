@@ -9,7 +9,7 @@
 #Checking number of arguments
 if [[ $# -ne 3 ]]; then
     echo "Invalid number of arguments." 
-    echo "Correct call: ./run-surface.sh [EVOPATH.root] [Surface.dat] [OUTPUTNAME.root]"
+    echo "Correct call: ./run-surface.sh [EVOPATHs.txt] [Surface.dat path] [OUTPUTNAME.root]"
     exit
 fi
 
