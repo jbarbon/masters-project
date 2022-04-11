@@ -1,3 +1,9 @@
+// Code developed by João Barbon
+// This code creates 1D and 2D projections of energy, velocity Ux, vorticity and temperature. 
+// You can define the ranges x,y or z of projection. For example, in the line
+//        Energy.Project1D("x" , "Bullet+BG" ,  EnergyInput, BinY_Zero, BinY_Zero, BinZ_Zero, BinZ_Zero  ); 
+// The four last arguments are the first and last bin of Y and Z, in this order.
+
 #include <iostream>
 #include <fstream>
 #include <vector>

@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#Checking number of arguments
-#if [[ ($# -lt  3) || ( $# -gt 4) ]]; then
-#    echo "Invalid number of arguments." 
-#    echo "Correct call: with evolution and BG files ./doMain.sh [EVOPATH.root] [BGPATH.root] [Surface.dat] [OUTPUTNAME.root]"
-#    echo "Correct call: with evolution./doMain.sh [EVOPATH.root] [Surface.dat] [OUTPUTNAME.root]"
-#    exit
-#fi
 
 #Important paths
 CURRENTPATH=${PWD}

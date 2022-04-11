@@ -32,8 +32,9 @@
 
 #include "../include/projection.h"
 
-
+//-------------------------------------------------------------------------------------------------------
 //----------------------------------Functions for the projection class-----------------------------------
+//-------------------------------------------------------------------------------------------------------
     //counter function
 int Projection::AddGlobalCounter() { return id++; }
 
@@ -45,8 +46,9 @@ Projection::Projection(TString MyNameOfObservable, TTree* MyTEvo, TTree* MyTBG, 
 Projection::Projection(TString MyNameOfObservable, TTree* MyTEvo, TString MyCodeSpeed, TFile* Myf_out)
     : NameOfObservable(MyNameOfObservable), TEvo(MyTEvo), CodeSpeed(MyCodeSpeed), f_out(Myf_out)  {}
 
-
+//------------------------------------------------------------------------------------------------------------------------
 //Creates 1D histogram title. This method is used to create the title of a histogram, provided the parameters passed to it
+//------------------------------------------------------------------------------------------------------------------------
 template<typename M1, typename M2>
 void Projection::CreateTitle1D(TString Axis, M1 h3, M2 h1, Float_t BinAmin, Float_t BinAmax, Float_t BinBmin, Float_t BinBmax)
 {
@@ -114,7 +116,9 @@ void Projection::CreateTitle1D(TString Axis, M1 h3, M2 h1, Float_t BinAmin, Floa
     h1->SetTitle(Title);
 }
 
+//------------------------------------------------------------------------------------------------------------------------
 //Creates 2D histogram title. This method is used to create the title of a histogram, provided the parameters passed to it
+//------------------------------------------------------------------------------------------------------------------------
 template<typename T3, typename T2>
 void Projection::CreateTitle2D(TString Axis, T3 h3, T2 h2, Float_t BinAmin, Float_t BinAmax)
 {
@@ -167,8 +171,10 @@ TString Projection::GenerateDirPath(TString TypeOfProj, TString Axis)
     return TypeOfProj + "/" + NameOfObservable + "/Proj_1D_" + Axis ;
 }
 
+//------------------------------------------------------------------------------------------------------------------------
+// Project 1D function
+//------------------------------------------------------------------------------------------------------------------------
 
-// Project 1D
 void Projection::Project1D(TString Axis, TString TypeOfProj, const char* Quantity, Float_t BinAmin, Float_t BinAmax, Float_t BinBmin, Float_t BinBmax)
 {
 
@@ -281,8 +287,10 @@ void Projection::Project1D(TString Axis, TString TypeOfProj, const char* Quantit
 
 }
     
-    
-//Project 2D
+//------------------------------------------------------------------------------------------------------------------------
+//Project 2D function
+//------------------------------------------------------------------------------------------------------------------------
+
 void Projection::Project2D(TString Axis, TString TypeOfProj, const char* Quantity, Float_t BinAmin, Float_t BinAmax)
 {
     
@@ -386,9 +394,6 @@ void Projection::Project2D(TString Axis, TString TypeOfProj, const char* Quantit
         std::cout << "Creating 1D "<< Axis << " projection" << " from " + NameOfObservable<< " " << TypeOfProj << ". Local " << j+1 <<"/"<< NumberOfTauEntries << " " <<
         " Global: " << id << "/" << idGlobal << std::endl;      
     }
-
-    //std::cout << "Creating 1D "<< Axis << " projection" << " from " + NameOfObservable<< " " << TypeOfProj << ". Global: " << id << "/" << idGlobal << std::endl; 
-
 }
 
 
