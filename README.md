@@ -2,7 +2,7 @@
 
 This code accepts an evolution.root 3D file and creates a .root file with 2D and 1D projections of energy, temperature, velocity and vorticity.
 
-## Main code
+## Projection code
 
 The [Proj_main_cxx](https://github.com/jbarbon/masters-project/blob/main/projection-code/Vorticity_Base/doMain/Projection_Class/src/Proj_main.cxx) code is where you will control your projections. It has two "main" methods. The first "main" method will accept the complete evolution file (Bullet+Background) and the background evolution file that will be used to generate the Bullet Only projections, and the second "main" method is a simplified version of the first one that will only accept the Bullet+Background file.
 
@@ -49,8 +49,26 @@ The second main class is pretty much like the first one, but without the contrib
 
 Finally, the "int main" is the part where we decide whether to use the background for the evolution (first main method), or not (second main method). 
 
+## Surface code
+
+The hypersurface code is reponsible for reading the freeze-out hypersurface and creating a .root file with its contents. The vorticity surface code reads the evolution file and creates a histogram with the vorticity plotted agains the angle phi, defined as the ArcTan(uy,ux), and the temperature.
+
+
 ## How to run
 
+The fastest way to run the codes is to use the wrapper at the top level folder. In order to run the projections you must create a text file containing the paths to the evolution.root 
+files. If you just want to run the Bullet+BG evolution without the background evolution, you can create a text file with complete paths and run
+
+`./run-projection.sh [EVOPATHs.txt] [OUTPUTNAME.root].
+`
+If you want to add the background contribution, you must also create a text file with the background evolution files and run
+
+`./run-projection.sh [EVOPATHs.txt] [BGPATHs.txt] [OUTPUTNAME.root].
+`
+
+Note that if you want to run multiple projections at once, the paths from [BGPATHs.txt] must be in the same order as the paths from [EVOPATHs.txt], that is, if [EVOPATHs.txt] has the paths to the simulation model A,B and C, [BGPATHs.txt] must contain the paths to A,B and C in the same order.
 
 
+Finally, in order to run the surface code, you must create a text file containing the paths to the evolution files and also get the path for the [Surface.dat]. The correct call for this case is
 
+`./run-surface.sh [EVOPATHs.txt] [Surface.dat path] [OUTPUTNAME.root]`
