@@ -29,8 +29,9 @@
 #include "Math/IFunction.h"
 
 #include "../include/parameters.h"
-
+//------------------------------------------------------------------------------------------------------------------------
 // Class for the parameters of the evolution
+//------------------------------------------------------------------------------------------------------------------------
 
 Parameters::Parameters(TTree* T)
 {
@@ -98,8 +99,9 @@ void Parameters::PrintParameters() const
     std::cout << std::endl;
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------
-
 //Methods to generate the array of taus values
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
 void Parameters::GenerateCompleteTauArrayValues(Float_t TauArrayValues[])
 {
     for(int i = 0; i < CompleteTauCuts_Entries ; i++)
@@ -133,6 +135,7 @@ void Parameters::GenerateDebugTauArrayValues(Float_t TauArrayValues[])
 }
 //------------------------------------------------------------------------------------------------------------------------------------------------
 //Methods to generate the array of taus entries
+//------------------------------------------------------------------------------------------------------------------------------------------------
 void Parameters::GenerateCompleteTauEntries(Float_t TauEntryArray[])
 {
     Float_t TauCutsArray[CompleteTauCuts_Entries];
@@ -173,6 +176,8 @@ void Parameters::GenerateDebugTauEntries(Float_t TauEntryArray[])
     }   
 }
 
+//------------------------------------------------------------------------------------------------------------------------------------------------
+// Functions related to the tau values
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
 Int_t Parameters::TauArrayEntries(TString CodeSpeed)

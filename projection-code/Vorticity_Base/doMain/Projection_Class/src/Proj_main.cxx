@@ -1,8 +1,4 @@
 // Code developed by João Barbon
-// This code creates 1D and 2D projections of energy, velocity Ux, vorticity and temperature. 
-// You can define the ranges x,y or z of projection. For example, in the line
-//        Energy.Project1D("x" , "Bullet+BG" ,  EnergyInput, BinY_Zero, BinY_Zero, BinZ_Zero, BinZ_Zero  ); 
-//
 
 #include <iostream>
 #include <fstream>
@@ -45,7 +41,7 @@
 
 //using namespace std;
 
-// Number of projections made in main(). This is used to count how many proj are left
+// Number of projections made in main(). This is used to keep count of how many proj are left
 #define NUMBER_PROJECTIONS 27;
 
 int Projection::idGlobal = NUMBER_PROJECTIONS;
