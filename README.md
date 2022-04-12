@@ -73,3 +73,5 @@ Note that if you want to run multiple projections at once, the paths from [BGPAT
 Finally, in order to run the surface code, you must create a text file containing the paths to the evolution files and also get the path for the [Surface.dat]. The correct call for this case is
 
 `./run-surface.sh [EVOPATHs.txt] [Surface.dat path] [OUTPUTNAME.root]`
+
+The wrappers will automatically compile the C++ codes and create a folder called Main_Results where the final projections and analysis will be. Also, at the top level folder there will be a .log file with the progress of the code.
